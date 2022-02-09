@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        recipe: ["Singularity"]
+        recipe: ["Singularity", "Test"]
 
     name: Check ${{ matrix.recipe }}
     steps:
