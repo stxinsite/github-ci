@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        recipe: ["Singularity", "Test"]
+        recipe: ["Singularity"]
 
     name: Check ${{ matrix.recipe }}
     steps:
@@ -42,7 +42,7 @@ jobs:
             sudo -E singularity build container.sif ${{ matrix.recipe }}
             tag=$(echo "${recipe/Singularity\./}")
             if [ "$tag" == "Singularity" ]; then
-                tag=latest
+                tag=test
             fi
             # Build the container and name by tag
             echo "Tag is $tag."
