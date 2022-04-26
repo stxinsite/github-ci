@@ -13,7 +13,7 @@ on:
 
 jobs:
   build-test-containers:
-    runs-on: self-hosted
+    runs-on: Neo
     strategy:
       fail-fast: false
       matrix:
@@ -23,7 +23,7 @@ jobs:
     steps:
 
       - name: Check out code for the container build
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Continue if Singularity Recipe Exists
         run: |
